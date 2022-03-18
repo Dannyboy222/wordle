@@ -1,4 +1,4 @@
-document.addEventListener('DOMcontentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 	createSquares();
 
 	function createSquares() {
