@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (currentWord === word) {
 			window.alert('congratulations!');
 		}
+
+		guessWords.push([]);
 	}
 
 	function createSquares() {
