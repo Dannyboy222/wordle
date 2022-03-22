@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (currentWordArr.length !== 5) {
 			window.alert('word must be 5 letters');
 		}
+
+		const currentWord = currentWordArr.join('');
+
+		if (currentWord === word) {
+			window.alert('congratulations!');
+		}
 	}
 
 	function createSquares() {
