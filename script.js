@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				const letterId = firstLetterId + index;
 
 				const letterEl = document.getElementById(letterId);
-				letterEl.classList.add('animate_flipInx');
+				letterEl.classList.add('animate__flipInX');
 				letterEl.style = `background-color:${tileColor};border-color:${tileColor}`;
 			}, interval);
 		});
