@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let availableSpace = 1;
 
 	let word = 'image';
+	let guessWordCount = 0;
 
 	const keys = document.querySelectorAll('.keyboard-row button');
 
@@ -33,9 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		const currentWord = currentWordArr.join('');
+		const firstLetterId = guessWordCount * 5 + 1;
+		const interval = 200;
+		currentWordArr.forEach((letter, index) => {
+			setTimeout(() => {
+				const tileColor = 'rgb(58,58,60)';
+
+				const letterId = firstLetterId + index;
+
+				const letterEl = document.getElementById(letterId);
+				letterEl.classList.add('animate_flipInx');
+				letterEl.style = `background-color:${tileColor};border-color:${tileColor}`;
+			}, interval);
+		});
 
 		if (currentWord === word) {
 			window.alert('congratulations!');
+		}
+
+		if (guessWords.length === 6) {
+			window.alert(`Sorry, you have no more guesses! The word is ${word}.`);
 		}
 
 		guessWords.push([]);
@@ -47,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		for (let index = 0; index < 30; index++) {
 			let square = document.createElement('div');
 			square.classList.add('square');
+			square.classList.add('animate__animated');
 			square.setAttribute('id', index + 1);
 			gameBoard.appendChild(square);
 		}
